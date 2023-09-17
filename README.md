@@ -16,7 +16,7 @@
 - [畸变系数推算畸变表](#畸变系数推算畸变表)
 - [References](#references)
 
-## Overview of Distortion Table    
+## Overview of Distortion Table
 
 来自鱼眼镜头厂商的畸变表一般为下述形式表格，其描述了光线通过透镜在相机传感器平面成像的高度信息，一般至少含有3列数据，比如下面表格有“Angle”(degrees),"Real Height"(mm),"Ref Height"(mm)等。其分别表示光线入射角(光线与摄像机光轴的夹角)，实际成像高度，参考成像高度(透视投影)，这些信息**足以表征此镜头的畸变扭曲程度**。另外还会提供一些常量,如每个像素长度为0.003mm，图像尺寸1920×1080，畸变中心位于图像中心，进一步地，结合畸变表，可以推算相机内参矩阵 $K$ 。
 
@@ -108,7 +108,7 @@ $$
 
 ### 注意误点
 
--  $r_d$ ， $r$ 的计算分析均指在归一化平面 $\pi_1$ 上进行的，而不是实际成像平面 $\pi_2$ 。[OpenCV文档](https://docs.opencv.org/4.x/db/d58/group__calib3d__fisheye.html)中写的是 $\theta_d =\theta \left(1+{k_1 \theta }^2 +k_2 \theta^4 +k_3 \theta^6 +{k_4 \theta }^8 \right)$ 不准确的，并非上述公式中的 $\theta_d$ ，这是因为OpenCV源码变量中把 $r_d$ 中间临时变量写成了 $\theta_d$ ，而文档是根据代码自动生成的，这就导致了描述不够准确，但内部计算逻辑是正确的， $\theta$ 和 $\theta_d$ 单位为弧度，非度数。
+- $r_d$ ， $r$ 的计算分析均指在归一化平面 $\pi_1$ 上进行的，而不是实际成像平面 $\pi_2$ 。[OpenCV文档](https://docs.opencv.org/4.x/db/d58/group__calib3d__fisheye.html)中写的是 $\theta_d =\theta \left(1+{k_1 \theta }^2 +k_2 \theta^4 +k_3 \theta^6 +{k_4 \theta }^8 \right)$ 不准确的，并非上述公式中的 $\theta_d$ ，这是因为OpenCV源码变量中把 $r_d$ 中间临时变量写成了 $\theta_d$ ，而文档是根据代码自动生成的，这就导致了描述不够准确，但内部计算逻辑是正确的， $\theta$ 和 $\theta_d$ 单位为弧度，非度数。
 - 参考[文献4](https://blog.csdn.net/qq_16137569/article/details/112398976)描述“畸变与焦距无关”是不完全正确的，这在归一化成像平面 $\pi_1$ 上成立，因为有 $r_d =1*\tan \left(\theta_d \right)$ ，但在实际成像平面上 $\pi_2$ 上不成立，因为 $\left\|O_3 p\right\|=f*\tan \left(\theta_d \right)$ , $\theta_d$ 一定的情况下，与焦距 $f$ 成正比的。
 - 参考[文献4](https://blog.csdn.net/qq_16137569/article/details/112398976)把平面 $\pi_1$ 和平面 $\pi_2$ 混为一团，后果是牵强认为 $r_d =1*\tan \left(\theta_d \right)=\theta_d$ ，为了说服其成立，认为“ $\theta_d$ 趋于0， $r_d$ 就等于 $\theta_d$ ，但这里根本就没有趋向于0的说法。
 
