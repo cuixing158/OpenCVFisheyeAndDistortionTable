@@ -41,7 +41,11 @@ arguments
 end
 
 % coeff convert to matlab
-[undistortX,undistortY] = meshgrid(1:newImageSize(2),1:newImageSize(1));
+centerY = newImageSize(1)/2; % ensure distortion lie in center of image 
+centerX = newImageSize(2)/2; % ensure distortion lie in center of image
+offsetX = -K(1,3)+centerX;
+offsetY = -K(2,3)+centerY;
+[undistortX,undistortY] = meshgrid(1+offsetX:newImageSize(2)+offsetX,1+offsetY:newImageSize(1)+offsetY);
 undistortPts = [undistortX(:),undistortY(:)];
 
 undistortPtsHomo = [undistortPts';
