@@ -3,7 +3,7 @@
 [![View Use OpenCV FishEye And DistortionTable In Matlab on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://ww2.mathworks.cn/matlabcentral/fileexchange/118170-use-opencv-fisheye-and-distortiontable-in-matlab)
 [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=cuixing158/OpenCVFisheyeAndDistortionTable&file=main.mlx)
 
->本Repo实现了从原理公式上直接使用来自OpenCV鱼眼畸变模型的4个系数 $k_1 ,k_2 ,k_3 ,k_4$ 和内参 $K$ 对图像进行去畸变以及来自厂商提供的镜头畸变表与OpenCV鱼眼模型参数的估计互相转换。另外对OpenCV鱼眼模型的成像原理过程(透视投影像高vs畸变像高)进行了绘图分析，便于从视觉上直观感受，从而加深对OpenCV鱼眼镜头模型投影成像的理解。关于pin-hole透视镜头成像标定过程可以参阅我之前的[Repo](https://github.com/cuixing158/singleImageCalibration)。
+>本Repo实现了从原理公式上直接使用来自OpenCV鱼眼畸变模型的4个系数 $k_1 ,k_2 ,k_3 ,k_4$ 和内参 $K$ 对图像进行去畸变以及来自厂商提供的镜头畸变表与OpenCV鱼眼模型参数的估计互相转换。另外对OpenCV鱼眼模型的成像原理过程(透视投影像高vs畸变像高)进行了绘图分析，便于从视觉上直观感受，从而加深对OpenCV鱼眼镜头模型投影成像的理解。关于pin-hole透视镜头成像标定过程可以参阅我之前的[Repo](https://github.com/cuixing158/singleImageCalibration)，C++代码请参阅我这个[Repo](https://github.com/cuixing158/FishEyeImage_Undistortion)。
 
 ## Table of contents
 
