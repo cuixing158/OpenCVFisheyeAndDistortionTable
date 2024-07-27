@@ -155,6 +155,10 @@ undistortImg = images.internal.interp2d(oriImg,mapX,mapY,...
 % 等价的pinhole camera intrinsics
 focalLen = [sx,sy].*flength;
 principlePoint = [sx,sy].*principlePt;
-imageSize = size(undistortImg,[1,2]);
-camIntrinsic = cameraIntrinsics(focalLen,principlePoint,imageSize);
+% imageSize = size(undistortImg,[1,2]);
+% camIntrinsic = cameraIntrinsics(focalLen,principlePoint,imageSize);
+
+camIntrinsic = [focalLen(1),0,principlePoint(1);
+    0,focalLen(2),principlePoint(2);
+    0,0,1];
 end
