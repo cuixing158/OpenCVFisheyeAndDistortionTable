@@ -1,5 +1,6 @@
 # 深入洞察OpenCV鱼眼模型之成像投影和畸变表估计系数相互转化
 
+[![Sponsor](https://img.shields.io/badge/-Sponsor-red?style=for-the-badge&logo=GitHub-Sponsors&logoColor=white)](https://raw.githubusercontent.com/cuixing158/OpticalFlow-Visualization/refs/heads/main/README_media/sponsors.jpg)
 [![View Use OpenCV FishEye And DistortionTable In Matlab on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://ww2.mathworks.cn/matlabcentral/fileexchange/118170-use-opencv-fisheye-and-distortiontable-in-matlab)
 [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=cuixing158/OpenCVFisheyeAndDistortionTable&file=main.mlx)
 
